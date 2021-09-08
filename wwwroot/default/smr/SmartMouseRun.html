@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>智鼠运动 - 年轻人的运动APP | 即日注册领红包</title>
+    <!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6ipQXyLu9WRVheiHix9KNvGrApHASbGI"></script>
+	<!--定义BDBOX样式-->
+	<style type="text/css">  
+		html{height:100%}    
+		body{height:100%;margin:0px;padding:0px}    
+		#container{height:100%}    
+	</style> 
+  </head>
+  
+  <body>
+    <!--百度地图容器-->
+	<div style="height:100%" id="map"></div>
+	<div>
+	1
+	</div>
+  </body>
+  <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+	  //地图初始位置
+      map.centerAndZoom(new BMap.Point(103.008401,29.984923),18);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var plOpts = [
+        {strokeColor:"#f00",strokeWeight:"4",strokeOpacity:"0.6"}
+      ];
+      var plPath = [
+        [
+          new BMap.Point(103.00784,29.986022),
+          new BMap.Point(103.007777,29.986148),
+          new BMap.Point(103.00766,29.986144),
+          new BMap.Point(103.007584,29.986074),
+          new BMap.Point(103.007391,29.985757),
+          new BMap.Point(103.007229,29.985503),
+          new BMap.Point(103.007094,29.985253),
+          new BMap.Point(103.007031,29.985155),
+          new BMap.Point(103.006941,29.984995),
+          new BMap.Point(103.00691,29.984959),
+          new BMap.Point(103.007009,29.984881),
+          new BMap.Point(103.007161,29.984803),
+          new BMap.Point(103.00735,29.98469),
+          new BMap.Point(103.007453,29.984631),
+          new BMap.Point(103.007467,29.984588),
+          new BMap.Point(103.00757,29.984553),
+          new BMap.Point(103.007588,29.9846),
+          new BMap.Point(103.007642,29.984506),
+          new BMap.Point(103.007705,29.984498),
+          new BMap.Point(103.007817,29.984545),
+          new BMap.Point(103.007938,29.984345),
+          new BMap.Point(103.008055,29.984287),
+          new BMap.Point(103.00806,29.984166),
+          new BMap.Point(103.007912,29.984048),
+          new BMap.Point(103.007961,29.983911),
+          new BMap.Point(103.008217,29.983763),
+          new BMap.Point(103.008522,29.983743),
+          new BMap.Point(103.00863,29.983911),
+          new BMap.Point(103.008765,29.984083),
+          new BMap.Point(103.008819,29.98422),
+          new BMap.Point(103.00881,29.984381),
+          new BMap.Point(103.008725,29.984486),
+          new BMap.Point(103.008648,29.984478),
+          new BMap.Point(103.008576,29.984494),
+          new BMap.Point(103.008419,29.984525),
+          new BMap.Point(103.008325,29.984447),
+          new BMap.Point(103.008235,29.984385),
+          new BMap.Point(103.008141,29.984299),
+          new BMap.Point(103.008091,29.984126),
+          new BMap.Point(103.008015,29.983923),
+          new BMap.Point(103.008082,29.983837),
+          new BMap.Point(103.008253,29.983825),
+          new BMap.Point(103.008289,29.983767),
+          new BMap.Point(103.008392,29.983704),
+          new BMap.Point(103.008464,29.983782),
+          new BMap.Point(103.008594,29.983943),
+          new BMap.Point(103.008769,29.984076),
+          new BMap.Point(103.00885,29.98431),
+          new BMap.Point(103.008796,29.984385),
+          new BMap.Point(103.008693,29.984388),
+          new BMap.Point(103.00859,29.984439),
+          new BMap.Point(103.008397,29.984564),
+          new BMap.Point(103.008316,29.984471),
+          new BMap.Point(103.008177,29.984209),
+          new BMap.Point(103.008082,29.984166),
+          new BMap.Point(103.008001,29.984021),
+          new BMap.Point(103.00797,29.983947),
+          new BMap.Point(103.008114,29.983798),
+          new BMap.Point(103.008212,29.983747),
+          new BMap.Point(103.008338,29.98379),
+          new BMap.Point(103.008361,29.983735),
+          new BMap.Point(103.008424,29.983712),
+          new BMap.Point(103.008486,29.983837),
+          new BMap.Point(103.00854,29.983943),
+          new BMap.Point(103.008558,29.983794),
+          new BMap.Point(103.00868,29.98406),
+          new BMap.Point(103.008774,29.984068),
+          new BMap.Point(103.008859,29.984342),
+          new BMap.Point(103.008742,29.984318),
+          new BMap.Point(103.008693,29.984435),
+          new BMap.Point(103.008594,29.984424),
+          new BMap.Point(103.008468,29.984459),
+          new BMap.Point(103.008383,29.984553),
+          new BMap.Point(103.008248,29.984451),
+          new BMap.Point(103.008271,29.984385),
+          new BMap.Point(103.008217,29.984338),
+          new BMap.Point(103.008118,29.984181),
+          new BMap.Point(103.008127,29.984126),
+          new BMap.Point(103.008015,29.984095),
+          new BMap.Point(103.007965,29.984021),
+          new BMap.Point(103.007965,29.983927),
+          new BMap.Point(103.007992,29.983868),
+          new BMap.Point(103.008069,29.983907),
+          new BMap.Point(103.008118,29.983759),
+          new BMap.Point(103.008208,29.983868),
+          new BMap.Point(103.008293,29.98372),
+          new BMap.Point(103.00837,29.983778),
+          new BMap.Point(103.00841,29.983712),
+          new BMap.Point(103.008473,29.983751),
+          new BMap.Point(103.008495,29.983786),
+          new BMap.Point(103.00863,29.983943),
+          new BMap.Point(103.008742,29.984111),
+          new BMap.Point(103.00876,29.984193),
+          new BMap.Point(103.008778,29.984306),
+          new BMap.Point(103.00876,29.984369),
+          new BMap.Point(103.008621,29.984459),
+          new BMap.Point(103.00841,29.984471),
+          new BMap.Point(103.008307,29.984396),
+          new BMap.Point(103.008154,29.984279),
+          new BMap.Point(103.008051,29.98433),
+          new BMap.Point(103.007831,29.984416),
+          new BMap.Point(103.007561,29.984592),
+          new BMap.Point(103.007611,29.984658),
+          new BMap.Point(103.007768,29.98483),
+          new BMap.Point(103.007813,29.984916),
+          new BMap.Point(103.007867,29.985006),
+          new BMap.Point(103.007952,29.985057),
+          new BMap.Point(103.007974,29.985096),
+          new BMap.Point(103.008091,29.98528),
+          new BMap.Point(103.008239,29.985425),
+          new BMap.Point(103.008388,29.98564),
+          new BMap.Point(103.008473,29.985757),
+          new BMap.Point(103.008275,29.985882),
+          new BMap.Point(103.007988,29.986035),
+          new BMap.Point(103.007853,29.986078),
+          new BMap.Point(103.007691,29.986175),
+          new BMap.Point(103.007588,29.98614),
+          new BMap.Point(103.007534,29.985933),
+          new BMap.Point(103.007094,29.985315),
+          new BMap.Point(103.007,29.985065),
+          new BMap.Point(103.006874,29.984905),
+          new BMap.Point(103.006717,29.984635),
+          new BMap.Point(103.006519,29.984345),
+          new BMap.Point(103.006304,29.984072),
+          new BMap.Point(103.006353,29.983935),
+          new BMap.Point(103.006546,29.983876),
+          new BMap.Point(103.006658,29.983771),
+          new BMap.Point(103.006681,29.983798),
+          new BMap.Point(103.006789,29.983688),
+          new BMap.Point(103.006887,29.983681),
+          new BMap.Point(103.006991,29.983677),
+          new BMap.Point(103.007054,29.983751),
+          new BMap.Point(103.007157,29.984005),
+          new BMap.Point(103.007233,29.984119),
+          new BMap.Point(103.007377,29.98431),
+          new BMap.Point(103.007539,29.984533),
+          new BMap.Point(103.007539,29.984533)
+        ],
+      ];
+      for(var index = 0; index < plOpts.length; index++){
+        var polyline = new BMap.Polyline(plPath[index],plOpts[index]);
+        map.addOverlay(polyline);
+      }
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</html>
